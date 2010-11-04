@@ -1,15 +1,29 @@
 namespace :highcharts_rails do
   to_copy = ["jquery-1.4.3.min.js", "modules/exporting.js", "highcharts.js"]
+  to_create = ["modules"]
   
   # install
   desc 'Copies required scripts files to the public/javascripts directory.'
   task :install do
     
     # inform the user of whats happening
-    puts "Copying #{to_copy.to_sentence} to public/javascripts/..."
+    puts "Creating directories #{to_create.to_sentence} in public/javascripts/..."
     
     success = true
-    
+
+    to_create.each do |directory|
+      # create
+    	destination = File.join(RAILS_ROOT, "/public/javascripts/", directory)
+    	  	
+    	# create
+    	unless FileUtils.mkdir(destination)
+    	  success = false
+  	  end
+    end
+
+
+    puts "Copying #{to_copy.to_sentence} to public/javascripts/..."
+        
     to_copy.each do |script|
       # copy from
     	destination = File.join(RAILS_ROOT, "/public/javascripts/", script)
