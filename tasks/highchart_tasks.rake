@@ -16,9 +16,11 @@ namespace :highcharts_rails do
     	destination = File.join(RAILS_ROOT, "/public/javascripts/", directory)
     	  	
     	# create
-    	unless FileUtils.mkdir(destination)
-    	  success = false
-  	  end
+    	unless File.exist?(destination)
+      	unless FileUtils.mkdir(destination)
+      	  success = false
+    	  end
+    	end
     end
 
 
