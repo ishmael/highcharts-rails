@@ -4,7 +4,7 @@ Highcharts-rails is a simple helper for displaying Highcharts graphs in your Rai
 
 Highcharts-rails accepts a combination of hashes and arrays that formatted in a way that Highcharts expects and allows developers to calculate chart data and format chart data/labels/tooltips in the controller and/or model instead of the view.
 
-This plugin is packaged with [Highcharts 2.0.5](http://highcharts.com/download), and [jQuery 1.4.3].
+This plugin is packaged with [Highcharts 2.1.0](http://highcharts.com/download), and [jQuery 1.4.3].
 
 ## Installation
 
